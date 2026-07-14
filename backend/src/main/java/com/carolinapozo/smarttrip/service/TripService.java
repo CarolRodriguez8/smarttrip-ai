@@ -19,17 +19,97 @@ public class TripService {
         String destination = trip.getDestination().toLowerCase();
         String travelType = trip.getTravelType().toLowerCase();
 
+        // ROMA
+
         if (destination.equals("roma")
-        && travelType.equals("gastronomico")) {
+                && travelType.equals("gastronomico")) {
 
-    response.setActivities(List.of(
-            "Trastevere",
-            "Mercado Campo de' Fiori",
-            "Ruta de pasta tradicional"
-    ));
+            response.setActivities(List.of(
+                    "Trastevere",
+                    "Mercado Campo de' Fiori",
+                    "Ruta de pasta tradicional"
+            ));
 
-    return response;
-}
+            return response;
+        }
+
+        if (destination.equals("roma")
+                && travelType.equals("romantico")) {
+
+            response.setActivities(List.of(
+                    "Piazza Navona",
+                    "Paseo nocturno por el Tíber",
+                    "Cena con vistas al Coliseo"
+            ));
+
+            return response;
+        }
+
+        if (destination.equals("roma")
+                && travelType.equals("aventura")) {
+
+            response.setActivities(List.of(
+                    "Ruta en bicicleta por Roma",
+                    "Senderismo en la Vía Appia",
+                    "Exploración de las Catacumbas"
+            ));
+
+            return response;
+        }
+
+        // BARCELONA
+
+        if (destination.equals("barcelona")
+                && travelType.equals("gastronomico")) {
+
+            response.setActivities(List.of(
+                    "Mercado de la Boquería",
+                    "Ruta de tapas por El Born",
+                    "Experiencia gastronómica en Gràcia"
+            ));
+
+            return response;
+        }
+
+        if (destination.equals("barcelona")
+                && travelType.equals("romantico")) {
+
+            response.setActivities(List.of(
+                    "Paseo por la Barceloneta",
+                    "Atardecer en el Búnker del Carmel",
+                    "Cena con vistas al mar"
+            ));
+
+            return response;
+        }
+
+        // PARÍS
+
+        if (destination.equals("paris")
+                && travelType.equals("romantico")) {
+
+            response.setActivities(List.of(
+                    "Torre Eiffel al atardecer",
+                    "Crucero por el Sena",
+                    "Paseo por Montmartre"
+            ));
+
+            return response;
+        }
+
+        if (destination.equals("paris")
+                && travelType.equals("gastronomico")) {
+
+            response.setActivities(List.of(
+                    "Ruta de pastelerías parisinas",
+                    "Mercado de Rue Cler",
+                    "Cena tradicional francesa"
+            ));
+
+            return response;
+        }
+
+        // ITINERARIOS GENERALES
 
         if (destination.equals("barcelona")) {
 
