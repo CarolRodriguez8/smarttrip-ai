@@ -17,6 +17,19 @@ public class TripService {
         response.setDestination(trip.getDestination());
 
         String destination = trip.getDestination().toLowerCase();
+        String travelType = trip.getTravelType().toLowerCase();
+
+        if (destination.equals("roma")
+        && travelType.equals("gastronomico")) {
+
+    response.setActivities(List.of(
+            "Trastevere",
+            "Mercado Campo de' Fiori",
+            "Ruta de pasta tradicional"
+    ));
+
+    return response;
+}
 
         if (destination.equals("barcelona")) {
 

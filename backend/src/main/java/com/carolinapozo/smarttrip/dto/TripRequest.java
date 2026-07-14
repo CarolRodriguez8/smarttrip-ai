@@ -5,6 +5,7 @@ public class TripRequest {
     private String destination;
     private int days;
     private double budget;
+    private String travelType;
 
     public String getDestination() {
         return destination;
@@ -29,4 +30,11 @@ public class TripRequest {
     public void setBudget(double budget) {
         this.budget = budget;
     }
+    public String getTravelType() {
+    return travelType;
+}
+
+    public void setTravelType(String travelType) {
+    this.travelType = travelType;
+}
 }
