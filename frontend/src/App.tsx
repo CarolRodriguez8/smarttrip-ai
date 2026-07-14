@@ -1,4 +1,5 @@
 import { useState } from "react";
+import MapComponent from "./MapComponent";
 
 function App() {
   const [destination, setDestination] = useState("");
@@ -7,6 +8,21 @@ function App() {
   const [activities, setActivities] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);
   const [travelType, setTravelType] = useState("cultural");
+  const travelIcons: Record<string, string> = {
+  cultural: "🏛️",
+  gastronomico: "🍝",
+  aventura: "⛰️",
+  romantico: "❤️",
+};
+  const destinationCoordinates: Record<string, [number, number]> = {
+  barcelona: [41.3851, 2.1734],
+  roma: [41.9028, 12.4964],
+  paris: [48.8566, 2.3522],
+};
+
+const coordinates =
+  destinationCoordinates[destination.toLowerCase()] ??
+  [41.3851, 2.1734];
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -165,13 +181,21 @@ function App() {
             </button>
 
           </form>
-
+          <div className="mt-6">
+  <MapComponent
+    position={coordinates}
+    destination={destination}
+  />
+</div>
           {activities.length > 0 && (
             <div className="mt-8">
 
-              <h2 className="text-2xl font-bold mb-4 text-blue-700">
-                Tu Itinerario Personalizado
-              </h2>
+            <h2 className="text-2xl font-bold mb-2 text-blue-700">
+              {travelIcons[travelType]} Tu Itinerario Personalizado
+            </h2>
+            <p className="text-gray-500 mb-4">
+            Destino seleccionado: {destination}
+            </p>
 
               <ul className="space-y-3">
                 {activities.map((activity, index) => (
