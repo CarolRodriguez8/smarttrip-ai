@@ -1,5 +1,6 @@
 package com.carolinapozo.smarttrip.controller;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +12,7 @@ import com.carolinapozo.smarttrip.service.TripService;
 
 @RestController
 @RequestMapping("/api/trips")
+@CrossOrigin(origins = "http://localhost:5173")
 public class TripController {
 
     private final TripService tripService;
